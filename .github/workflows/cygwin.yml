@@ -14,12 +14,12 @@ jobs:
       matrix:
         os:
           - windows-2019
-#          - windows-2022
+          - windows-2022
         platform:
           - arch: win64
             config: -DCMAKE_C_COMPILER=gcc 
-#          - arch: win32
-#            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
+          - arch: win32
+            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
     runs-on: ${{matrix.os}}
     env:
       CYGWIN_NOWINPATH: 1
