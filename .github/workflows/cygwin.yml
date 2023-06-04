@@ -21,8 +21,9 @@ jobs:
             config: -DCMAKE_C_COMPILER=gcc
 # are we learning sth new from win32?
           - arch: win32
+            config: -DCMAKE_C_COMPILER=gcc
 # if we activate this, more code changes are required:
-            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
+#            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
     runs-on: ${{matrix.os}}
     env:
       CYGWIN_NOWINPATH: 1

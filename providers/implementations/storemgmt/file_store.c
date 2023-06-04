@@ -608,9 +608,9 @@ static int file_name_check(struct file_ctx_st *ctx, const char *name)
      * Last, check that the rest of the extension is a decimal number, at
      * least one digit long.
      */
-    if (!isdigit(*p))
+    if (!isdigit((int)(*p)))
         return 0;
-    while (isdigit(*p))
+    while (isdigit((int)(*p)))
         p++;
 
 #ifdef __VMS
