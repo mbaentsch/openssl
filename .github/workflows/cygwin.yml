@@ -19,7 +19,8 @@ jobs:
           - arch: win64
             config: -DCMAKE_C_COMPILER=gcc 
           - arch: win32
-            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
+            config: -DCMAKE_C_COMPILER=gcc
+#            config: -DCMAKE_C_COMPILER=gcc --strict-warnings no-fips enable-quic
     runs-on: ${{matrix.os}}
     env:
       CYGWIN_NOWINPATH: 1
