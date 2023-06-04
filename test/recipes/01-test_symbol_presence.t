@@ -24,6 +24,7 @@ use platform;
 plan skip_all => "Test is disabled on NonStop" if config('target') =~ m|^nonstop|;
 # MacOS arranges symbol names differently
 plan skip_all => "Test is disabled on MacOS" if config('target') =~ m|^darwin|;
+plan skip_all => "Test is disabled on cygwin" if config('target') =~ m|^cygwin|;
 plan skip_all => "This is unsupported on platforms that don't have 'nm'"
     unless IPC::Cmd::can_run('nm');
 
@@ -34,6 +35,7 @@ note
     "ordinals (util/*.num in the source tree), and that our static libraries\n",
     "don't share symbols, something that should be a good enough check for\n",
     "the other platforms as well.\n";
+note config('target');
 
 my %stlibname;
 my %shlibname;
